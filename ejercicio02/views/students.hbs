@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de estudiantes</title>
+  <style>
+    table { border-collapse: collapse; width: 50%; }
+    th, td { border: 1px solid black; padding: 8px; text-align: center; }
+    .highlight { background-color: yellow; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Notas de estudiantes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each students}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td class="{{#ifCond this.grade}}highlight{{/ifCond}}">{{this.grade}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+</html>
