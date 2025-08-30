@@ -41,7 +41,7 @@ function create(student) { student.id = nextId(); students.push(student); return
 function update(id, updateData) {
   const idx = students.findIndex(s => s.id === id);
   if (idx === -1) return null;
-  students[idx] = { ...students[idx], ...updateData, id }; // id inmutable
+  students[idx] = { ...students[idx], ...updateData, id }; 
   return students[idx];
 }
 function remove(id) {
@@ -50,7 +50,7 @@ function remove(id) {
   return students.splice(idx, 1)[0];
 }
 
-// Tarea: endpoints extra
+
 function listByStatus(status) {
   return students.filter(s => (s.status || "").toLowerCase() === String(status).toLowerCase());
 }
